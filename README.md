@@ -51,14 +51,14 @@ editModal.addEventListener("event-error", (e) => {
       numero: "",
       pessoa_id: 0000,
       principal: "",
-      tipo_logradouro_id: 00
+      tipo_logradouro_id: 00,
       tipo_logradouro_print: "",
     },
     pessoa_id: 0000
     telefone: {
       ddd: "8",
       fone: "",
-      id: 00000
+      id: 00000,
       principal: "",
       validado: true,
     },
