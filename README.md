@@ -10,21 +10,21 @@ This component was bootstrapped with [Direflow](https://direflow.io).
 Eventos
 
 Evento de clique botão fechar
-```html
+```javascript
 editModal.addEventListener("event-close", (e) => {
   console.log("botão fechar clicado");
 });
 ```
 
 Evento de Sucesso ao cadastrar dados
-```html
+```javascript
 editModal.addEventListener("event-success", (e) => {
   console.log("Salvou dados com sucesso");
 });
 ```
 
 Evento de Erro ao cadastrar dados
-```html
+```javascript
 editModal.addEventListener("event-error", (e) => {
   console.log("Erro ao salvar dados");
 });
