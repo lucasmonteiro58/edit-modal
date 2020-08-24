@@ -1,0 +1,540 @@
+#EditModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: FadeInAnimation 300ms;
+}
+
+#EditModal > div.backdrop {
+  width: 100vw;
+  height: max-content;
+  position: absolute;
+  top: 0;
+}
+
+#EditModal > div.backdrop.none {
+  display: none;
+}
+
+#EditModal > div.modal-content.none {
+  display: none;
+}
+
+#EditModal > div.modal-content {
+  z-index: 2001;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #fff;
+  color: #009ccc;
+  border-radius: 12px;
+  padding: 4% 4%;
+  max-width: 50%;
+  transition: margin-bottom 100ms ease-in-out;
+}
+
+#EditModal > div.modal-content > form {
+  width: 100%;
+}
+
+#EditModal > div.modal-content > form > h1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28px;
+  margin-bottom: 32px;
+}
+
+#EditModal > div.modal-content > form > div.infos-line0 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 4fr;
+  column-gap: 20px;
+  margin: 24px 0;
+}
+
+.edit-senha-button {
+  padding-top: 0px;
+}
+
+.edit-senha-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#EditModal > div.modal-content > form > div.infos-line1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  column-gap: 20px;
+  margin: 24px 0;
+}
+
+#EditModal > div.modal-content > form > div.infos-line2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+  column-gap: 20px;
+  margin: 24px 0;
+}
+
+#EditModal > div.modal-content > form > div.infos-line3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  margin: 24px 0;
+}
+
+#EditModal > div.modal-content > form > h1 > svg {
+  color: #0000008a;
+}
+
+#EditModal > div.modal-content > form > h1 > svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#EditModal > div.modal-content > form > h2 {
+  font-weight: 500;
+  font-size: 28px;
+  margin: 32px 0;
+}
+
+#EditModal > div.modal-content > form > h1 > span {
+  color: #009ccc;
+}
+
+#EditModal > div.modal-content > form > .buttons-section {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 48px;
+  min-width: 350px;
+  font-size: 18px;
+}
+
+#EditModal > div.modal-content > form > .buttons-section > button {
+  width: 32%;
+  font-size: 18px;
+}
+
+#EditModal.none {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+@media (max-width: 768px) {
+  #EditModal > div.modal-content {
+    margin: 0px 32px;
+    width: 80%;
+    min-width: 80%;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line1 {
+    grid-template-columns: 1fr 2fr 3fr;
+    margin: 24px 0;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line2 {
+    grid-template-columns: 2fr 2fr 2fr 1fr;
+    margin: px 0;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line3 {
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    margin: 24px 0;
+  }
+}
+
+@media (max-width: 425px) {
+  #EditModal > div.modal-content {
+    padding: 32px;
+    max-width: 90%;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line1 {
+    grid-template-columns: 1fr;
+    margin: 2px 0;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line2 {
+    grid-template-columns: 1fr;
+    margin: 2px 0;
+  }
+
+  #EditModal > div.modal-content > form > div.infos-line3 {
+    grid-template-columns: 1fr;
+    margin: 2px 0;
+  }
+
+  #EditModal > div.modal-content > form > .buttons-section > button {
+    width: 100%;
+  }
+
+  #EditModal > div.modal-content > form > .buttons-section {
+    min-width: inherit;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* ----------------- global ------------------------ */
+
+:root {
+  --primary: #009ccc;
+  --title: #0000008a;
+  --hover: #008baa;
+  --secondary: #28ac9d;
+  --error: #d52705;
+  --p4: 64px;
+  --p5: 128px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-family: "Muli", sans-serif;
+}
+
+html {
+  overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  /* background-color: #f5f5f5; */
+}
+
+button {
+  background-color: #009ccc;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 40px;
+  /* padding: 14px 16px; */
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button > img {
+  transform: scale(0.4);
+}
+
+button:hover {
+  background-color: #008baa;
+}
+
+button:active {
+  background-color: #009aaa;
+}
+
+button:disabled {
+  background-color: #009aaa91;
+}
+
+button.outlined {
+  background-color: transparent;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+
+button.outlined:hover {
+  outline: 1px solid #009ccc;
+}
+
+button.secondary-button {
+  background-color: #bbbbbb;
+}
+
+button.secondary-button:hover {
+  background-color: #999999;
+}
+
+button.secondary-button:active {
+  background-color: #777777;
+}
+
+button.success-button {
+  background-color: #28ac9d;
+}
+
+button.success-button:disabled {
+  background-color: #28ac9d91 !important;
+}
+
+button.success-button:hover {
+  background-color: #289c8d;
+}
+
+button.success-button:active {
+  background-color: #288c7d;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 
+  Input materialized here
+*/
+
+div.material-input {
+  width: 100%;
+  margin-bottom: 8px;
+}
+div.material-input label {
+  position: relative;
+  display: block;
+  color: #1e1e1e47;
+  width: 100%;
+  min-height: 45px;
+}
+div.material-input > label > .placeholder {
+  position: absolute;
+  display: block;
+  font-weight: bold;
+  top: 10px;
+  z-index: 2;
+  font-size: 18px;
+  font-family: "Muli" sans-serif;
+  transition: all 200ms ease-in-out;
+  width: 100%;
+  cursor: text;
+}
+div.material-input > label > input,
+div.material-input > textarea {
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  width: 100%;
+  font-size: 18px;
+  border: 0;
+  border-bottom: 1.5px solid #1e1e1e47;
+  transition: border-color 200ms ease-in-out;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+div.material-input > label > textarea {
+  min-height: 30px;
+  padding: 8px 0;
+}
+div.material-input label > input {
+  font-size: 18px;
+  padding-bottom: 5px;
+  background-color: transparent;
+  text-overflow: ellipsis;
+}
+div.material-input > label > input:focus,
+div.material-input > label > textarea:focus,
+div.material-input > label > textarea:valid,
+div.material-input > label > input:not(:placeholder-shown) {
+  border-bottom: 2px solid #0000004d;
+}
+
+div.material-input > label > input.error {
+  border-bottom: 2px solid #d527058a;
+}
+
+div.material-input > label > input.error-with-color {
+  border-bottom: 2px solid #d527058a;
+  color: #d52805af;
+}
+
+div.status-message {
+  padding-top: 16px;
+  text-align: right;
+  color: #28ac9d;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+div.status-message > svg {
+  font-size: 26px;
+  margin-right: 5px;
+}
+
+div.material-input > label > input:focus + .placeholder,
+div.material-input > label > input:not(:placeholder-shown) + .placeholder,
+div.material-input > label > textarea:focus + .placeholder,
+div.material-input > label > textarea:valid + .placeholder {
+  top: -3px;
+  cursor: inherit;
+  font-size: 14px;
+  color: #0000008a;
+}
+
+div.material-input > label > input::-ms-reveal {
+  display: none;
+}
+
+div.material-input > label img.password-show {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  width: 22px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* select starting stylings ------------------------------*/
+div.material-select {
+  position: relative;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+div.material-select > select {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 15px 1px 5px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #0000004d;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+div.material-select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+div.material-select > label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+.material-select-content:focus ~ .material-select-label,
+.material-select-content:valid ~ .material-select-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0000008a;
+  top: -5px;
+  transition: 0.2s ease all;
+}
+
+.material-select-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.material-select-bar:before,
+.material-select-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #0000008a;
+  transition: 0.2s ease all;
+}
+
+div.material-select > span::nth-child(1) {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.keyboard-content {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.keyboard-component {
+  width: 60%;
+}
+
+@keyframes SlideInAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes SlideOutAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes FadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

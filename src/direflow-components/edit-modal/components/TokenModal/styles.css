@@ -1,0 +1,161 @@
+#TokenModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 0.75); */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2002;
+  animation: FadeInAnimation 300ms;
+}
+
+#TokenModal > div.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+#TokenModal > div.modal-content {
+  z-index: 2001;
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  background-color: #fff;
+  color: #0000008a;
+  border-radius: 12px;
+  padding: 4% 5%;
+  transition: margin-bottom 100ms ease-in-out;
+}
+
+/* #TokenModal > div.modal-content.teclando {
+  margin-bottom: 150px;
+  transition: margin-bottom 100ms ease-in-out;
+} */
+
+.title-token-modal {
+  font-size: 28px;
+}
+
+.h2-token-modal {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.number-token-modal {
+  font-size: 28px;
+  color: #009ccc;
+}
+
+#TokenModal > div.modal-content > .buttons-section {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 350px;
+  font-size: 24px;
+  margin-top: 48px;
+}
+
+.input-token-modal {
+  font-size: 32px;
+  color: #0000008a;
+  border: 2px solid #0000008a;
+  border-radius: 12px;
+  padding: 16px 16px;
+  width: 224px;
+  letter-spacing: 10px;
+}
+
+.incorrect-token-modal {
+  border: 2px solid red;
+}
+
+.status-message-token-modal {
+  font-size: 12px;
+  padding: 6px;
+  color: red;
+}
+
+.input-token-modal::-webkit-outer-spin-button,
+.input-token-modal::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#TokenModal > div.modal-content > div > span.resend-token {
+  margin: 20px 0 64px 0;
+  color: #0000008a;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 700;
+  border-bottom: 1px solid #0000008a;
+}
+
+#TokenModal > div.modal-content > div > span.disable {
+  cursor: inherit;
+  color: #00000038;
+  border-bottom: 1px solid #00000038;
+}
+
+#TokenModal > div.modal-content > div > span.disable-icon {
+  cursor: inherit;
+  color: #00000038;
+}
+
+#TokenModal > div.modal-content > div > span.icon > svg {
+  width: 20px;
+  transform: scale(1.5);
+  margin: 0px 0px 0px 5px;
+}
+
+#TokenModal > div.modal-content > div > span.timer {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 16px;
+}
+
+#TokenModal > div.modal-content > .buttons-section > button {
+  width: 46%;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  #TokenModal > div.modal-content {
+    margin: 0px 32px;
+  }
+}
+
+@media (max-width: 425px) {
+  #TokenModal > div.modal-content {
+    padding: 32px;
+    max-width: 90%;
+  }
+
+  #TokenModal > div.modal-content > div > span.resend-token {
+    line-height: 30px;
+  }
+
+  #TokenModal > div.modal-content > div > span.timer {
+    margin-left: 0px;
+  }
+
+  #TokenModal > div.modal-content > .buttons-section {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 18px;
+    padding-right: 12%;
+  }
+  #TokenModal > div.modal-content > .buttons-section > button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

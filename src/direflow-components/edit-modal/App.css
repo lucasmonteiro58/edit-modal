@@ -1,0 +1,364 @@
+:root {
+  --primary: #009ccc;
+  --title: #0000008a;
+  --hover: #008baa;
+  --secondary: #28ac9d;
+  --error: #d52705;
+  --p4: 64px;
+  --p5: 128px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  font-family: "Muli", sans-serif;
+}
+
+html {
+  overflow: hidden;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  /* background-color: #f5f5f5; */
+}
+
+button {
+  background-color: #009ccc;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  height: 40px;
+  /* padding: 14px 16px; */
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button > img {
+  transform: scale(0.4);
+}
+
+button:hover {
+  background-color: #008baa;
+}
+
+button:active {
+  background-color: #009aaa;
+}
+
+button:disabled {
+  background-color: #009aaa91;
+}
+
+button.outlined {
+  background-color: transparent;
+  color: #fff;
+  outline: 1px solid #fff;
+}
+
+button.outlined:hover {
+  outline: 1px solid #009ccc;
+}
+
+button.secondary-button {
+  background-color: #bbbbbb;
+}
+
+button.secondary-button:hover {
+  background-color: #999999;
+}
+
+button.secondary-button:active {
+  background-color: #777777;
+}
+
+button.success-button {
+  background-color: #28ac9d;
+}
+
+button.success-button:disabled {
+  background-color: #28ac9d91 !important;
+}
+
+button.success-button:hover {
+  background-color: #289c8d;
+}
+
+button.success-button:active {
+  background-color: #288c7d;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 
+  Input materialized here
+*/
+
+div.material-input {
+  width: 100%;
+  margin-bottom: 16px;
+}
+div.material-input label {
+  position: relative;
+  display: block;
+  color: #1e1e1e47;
+  width: 100%;
+  min-height: 45px;
+}
+div.material-input > label > .placeholder {
+  position: absolute;
+  display: block;
+  font-weight: bold;
+  top: 10px;
+  z-index: 2;
+  font-size: 28px;
+  font-family: "Muli" sans-serif;
+  transition: all 200ms ease-in-out;
+  width: 100%;
+  cursor: text;
+}
+div.material-input > label > input,
+div.material-input > textarea {
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  width: 100%;
+  font-size: 28px;
+  border: 0;
+  border-bottom: 1.5px solid #1e1e1e47;
+  transition: border-color 200ms ease-in-out;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+div.material-input > label > textarea {
+  min-height: 30px;
+  padding: 8px 0;
+}
+div.material-input label > input {
+  font-size: 28px;
+  padding-bottom: 5px;
+  background-color: transparent;
+  text-overflow: ellipsis;
+}
+div.material-input > label > input:focus,
+div.material-input > label > textarea:focus,
+div.material-input > label > textarea:valid,
+div.material-input > label > input:not(:placeholder-shown) {
+  border-bottom: 2px solid #0000008a;
+}
+
+div.material-input > label > input.error {
+  border-bottom: 2px solid #d527058a;
+}
+
+div.material-input > label > input.error-with-color {
+  border-bottom: 2px solid #d527058a;
+  color: #d52805af;
+}
+
+div.status-message {
+  padding-top: 16px;
+  text-align: right;
+  color: #28ac9d;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+div.status-message > svg {
+  font-size: 26px;
+  margin-right: 5px;
+}
+
+div.material-input > label > input:focus + .placeholder,
+div.material-input > label > input:not(:placeholder-shown) + .placeholder,
+div.material-input > label > textarea:focus + .placeholder,
+div.material-input > label > textarea:valid + .placeholder {
+  top: -2px;
+  cursor: inherit;
+  font-size: 11px;
+  color: #0000008a;
+}
+
+div.material-input > label > input::-ms-reveal {
+  display: none;
+}
+
+div.material-input > label img.password-show {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  width: 22px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* select starting stylings ------------------------------*/
+div.material-select {
+  position: relative;
+  width: 350px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+div.material-select > select {
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 350px;
+  padding: 17px 1px 3px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+div.material-select > select:focus {
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+div.material-select:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: "";
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.12);
+  pointer-events: none;
+}
+
+div.material-select > label {
+  color: rgba(0, 0, 0, 0.26);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+.material-select-content:focus ~ .material-select-label,
+.material-select-content:valid ~ .material-select-label {
+  color: #009ccc;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 12px;
+}
+
+.material-select-bar {
+  position: relative;
+  display: block;
+  width: 350px;
+}
+
+.material-select-bar:before,
+.material-select-bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #009ccc;
+  transition: 0.2s ease all;
+}
+
+.material-select-bar:before {
+  left: 50%;
+}
+
+.material-select-bar:after {
+  right: 50%;
+}
+
+.material-select-content:focus ~ .material-select-bar:before,
+.material-select-content:focus ~ .material-select-bar:after {
+  width: 50%;
+}
+
+div.material-select > span::nth-child(1) {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.keyboard-content {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.keyboard-component {
+  width: 60%;
+}
+
+@keyframes SlideInAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes SlideOutAnimation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes FadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

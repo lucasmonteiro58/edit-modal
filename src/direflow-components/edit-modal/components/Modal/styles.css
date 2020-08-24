@@ -1,0 +1,104 @@
+#Modal {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2005;
+  overflow: auto;
+  animation: FadeInAnimation 300ms;
+}
+
+#Modal > div.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+#Modal > div.modal-content {
+  z-index: 2001;
+  min-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 12px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#Modal > div.modal-content > img {
+  height: 170px;
+  margin-bottom: 32px;
+}
+
+#Modal > div.modal-content > h1 {
+  font-size: 32px;
+  color: #0000008a;
+  margin: 0 96px 16px 96px;
+  text-align: center;
+}
+
+#Modal > div.modal-content > h2 {
+  font-size: 32px;
+
+  color: #28ac9d;
+}
+
+#Modal > div.modal-content > h3 {
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+}
+
+#Modal > div.modal-content > .buttons-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  margin-top: 48px;
+}
+
+#Modal > div.modal-content > .buttons-section > button {
+  min-width: 350px;
+  margin: 0 16px;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+#Modal > div.modal-content > .buttons-section > button.secondary {
+  /* margin-bottom: 16px; */
+}
+
+@media (max-width: 768px) {
+  #Modal > div.modal-content {
+    margin: 0px 32px;
+  }
+}
+
+@media (max-width: 425px) {
+  #Modal > div.modal-content {
+    padding: 32px;
+    max-width: 90%;
+  }
+
+  #Modal > div.modal-content > img {
+    max-width: 120px;
+  }
+
+  #Modal > div.modal-content > h1 {
+    font-size: 32px;
+  }
+
+  #Modal > div.modal-content > .buttons-section > button {
+    min-width: 192px;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Edit Modal</title>
+  </head>
+  <body>
+    <edit-modal></edit-modal>
+    <script>
+      const editModal = document.querySelector("edit-modal");
+
+      //--Evento de clique botão fechar
+      editModal.addEventListener("event-close", (e) => {
+        console.log("botão fechar clicado");
+      });
+
+      //--Evento de Sucesso ao cadastrar dados
+      editModal.addEventListener("event-success", (e) => {
+        console.log("Salvou dados com sucesso");
+      });
+
+      //--Evento de Erro ao cadastrar dados
+      editModal.addEventListener("event-error", (e) => {
+        console.log("Erro ao salvar dados");
+      });
+
+      //editModal.showPassword = true;
+
+      editModal.userData = {
+        email: {
+          email: "usuarioteste@gmail.com",
+          id: 36509,
+          principal: "S",
+        },
+        endereco: {
+          bairro: "FATIMA",
+          cep: "60040531",
+          cidade: "FORTALEZA",
+          complemento: "LIBRE",
+          estado: "CE",
+          id: 377116,
+          logradouro: "TREZE DE MAIO",
+          numero: "115",
+          pessoa_id: 50027,
+          principal: "S",
+          tipo_logradouro_id: 96,
+          tipo_logradouro_print: "SUBIDA",
+        },
+        pessoa_id: 50027,
+        telefone: {
+          ddd: "85",
+          fone: "998011111",
+          id: 100133,
+          principal: "S",
+          validado: true,
+        },
+      };
+    </script>
+  </body>
+</html>
