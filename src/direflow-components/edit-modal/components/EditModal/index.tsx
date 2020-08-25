@@ -5,6 +5,7 @@ import { SubmitHandler, FormHandles } from "@unform/core";
 import { Form } from "@unform/web";
 import { MdClose } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 import { Email, Endereco, Telefone } from "../../context/UserInterfaces";
 import Input from "../Form/Input";
 import CreatableSelect from "../Form/Select";
@@ -441,6 +442,12 @@ const EditModal: React.FC<ModalProps> = ({
                       label="Repita a senha"
                       type="password"
                     />{" "}
+                    <AiOutlineCloseCircle
+                      title="Cancelar"
+                      onClick={() => {
+                        setEditPasswordVisibility(false);
+                      }}
+                    />
                   </>
                 ) : (
                   <div
