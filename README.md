@@ -7,7 +7,7 @@ This component was bootstrapped with [Direflow](https://direflow.io).
 <edit-modal></edit-modal>
 ```
 
-Eventos
+## Eventos
 
 Evento de clique botão fechar
 ```javascript
@@ -62,6 +62,11 @@ editModal.addEventListener("event-error", (e) => {
       principal: "",
       validado: true,
     },
+ ```
+ ## Comandos
+ ```code
+ yarn start
+ yarn build
  ```
 
 Use this README to describe your Direflow Component
