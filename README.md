@@ -7,7 +7,7 @@ This component was bootstrapped with [Direflow](https://direflow.io).
 <edit-modal></edit-modal>
 ```
 
-## Eventos
+### Eventos
 
 Evento de clique botão fechar
 ```javascript
@@ -30,7 +30,7 @@ editModal.addEventListener("event-error", (e) => {
 });
 ```
 
-# Dados
+### Dados
 ```javascript
  editModal.showPassword = true;
 
@@ -63,8 +63,9 @@ editModal.addEventListener("event-error", (e) => {
       validado: true,
     },
  ```
- ## Comandos
+ ### Comandos
  ```code
+ yarn install
  yarn start
  yarn build
  ```
