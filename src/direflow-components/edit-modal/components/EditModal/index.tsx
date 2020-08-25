@@ -92,6 +92,13 @@ const EditModal: React.FC<ModalProps> = ({
   const [modalSucessVisible, setModalSucessVisible] = useState(false);
   const [modalErrorVisible, setModalErrorVisible] = useState(false);
 
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [currentPasswordRepeat, setCurrentPasswordRepeat] = useState("");
+  const [passwordEquals, setPasswordEquals] = useState(true);
+  const [passwordEqualsVisibility, setPasswordEqualsVisibility] = useState(
+    false
+  );
+
   const [currentCep, setCurrentCep] = useState(data?.endereco?.cep);
   const [currentDDD, setCurrentDDD] = useState(data?.telefone?.ddd);
   const [currentFone, setCurrentFone] = useState(data?.telefone?.fone);
@@ -101,6 +108,17 @@ const EditModal: React.FC<ModalProps> = ({
 
   const [cepIsValid, setCepIsValid] = useState(true);
   const dispatch = useContext(EventContext);
+
+  const verifyPasswordEquals = (v: string) => {
+    setCurrentPasswordRepeat(v);
+    if (currentPasswordRepeat.length === currentPassword.length) {
+      if (currentPassword === currentPasswordRepeat) {
+        setPasswordEquals(true);
+      } else {
+        setPasswordEquals(false);
+      }
+    }
+  };
 
   const eventSuccess = () => {
     const event = new CustomEvent("event-success");
@@ -432,12 +450,28 @@ const EditModal: React.FC<ModalProps> = ({
                   <>
                     <Input
                       id="senha"
+                      className={
+                        !passwordEquals && passwordEqualsVisibility
+                          ? "error-with-color"
+                          : ""
+                      }
+                      value={currentPassword}
+                      onChange={(e) => setCurrentPassword(e.target.value)}
+                      onBlur={() => setPasswordEqualsVisibility(false)}
                       name="senha"
                       label="Nova senha"
                       type="password"
                     />
                     <Input
-                      id="senha-repetir"
+                      id="senhaRepetir"
+                      className={
+                        !passwordEquals && passwordEqualsVisibility
+                          ? "error-with-color"
+                          : ""
+                      }
+                      value={currentPasswordRepeat}
+                      onChange={(e) => verifyPasswordEquals(e.target.value)}
+                      onBlur={() => setPasswordEqualsVisibility(false)}
                       name="senha_repetir"
                       label="Repita a senha"
                       type="password"
@@ -448,6 +482,11 @@ const EditModal: React.FC<ModalProps> = ({
                         setEditPasswordVisibility(false);
                       }}
                     />
+                    {!passwordEquals && passwordEqualsVisibility && (
+                      <span className="passoword-nao-confere">
+                        *Senhas não conferem!
+                      </span>
+                    )}
                   </>
                 ) : (
                   <div

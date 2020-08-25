@@ -69,9 +69,18 @@
 #EditModal > div.modal-content > form > div.infos-line0 {
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 2fr 4fr;
+  grid-template-columns: 3fr 3fr 4fr;
   column-gap: 20px;
   margin: 24px 0;
+}
+
+#EditModal
+  > div.modal-content
+  > form
+  > div.infos-line0
+  > span.passoword-nao-confere {
+  color: #d52705;
+  font-size: 11px;
 }
 
 #EditModal > div.modal-content > form > div.infos-line0 > svg {
