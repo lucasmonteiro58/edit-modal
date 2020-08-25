@@ -34,34 +34,35 @@ editModal.addEventListener("event-error", (e) => {
 ```javascript
  editModal.showPassword = true;
 
-  editModal.userData = {
-    email: {
-      email: "",
-      id: 0000,
-      principal: "",
-    },
-    endereco: {
-      bairro: "",
-      cep: "",
-      cidade: "",
-      complemento: "",
-      estado: "",
-      id: 00000,
-      logradouro: "",
-      numero: "",
-      pessoa_id: 0000,
-      principal: "",
-      tipo_logradouro_id: 00,
-      tipo_logradouro_print: "",
-    },
-    pessoa_id: 0000
-    telefone: {
-      ddd: "8",
-      fone: "",
-      id: 00000,
-      principal: "",
-      validado: true,
-    },
+ editModal.userData = {
+  email: {
+    email: string;
+    id: number;
+    principal: string;
+  };
+  endereco: {
+    bairro: string;
+    cep: string;
+    cidade: string;
+    complemento: string;
+    estado: string;
+    id: number;
+    logradouro: string;
+    numero: string;
+    pessoa_id: number;
+    principal: string;
+    tipo_logradouro_id: number;
+    tipo_logradouro_print: number;
+  };
+  pessoa_id: number;
+  telefone: {
+    ddd: string;
+    fone: string;
+    id: number;
+    principal: string;
+    validado: true;
+  };
+ },
  ```
  ### Comandos
  ```code
